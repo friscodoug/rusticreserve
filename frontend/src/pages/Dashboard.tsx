@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Book, Leaf, Gift, Mail, Share2, HelpCircle, ChevronRight, RefreshCw, CloudSun, Building2, Flame } from 'lucide-react';
+import { Book, Gift, Mail, Share2, HelpCircle, ChevronRight, CloudSun, Flame, Compass } from 'lucide-react';
 import Card from '../components/Card';
-import { COLORS, IMAGES, CONTACT, LOCATION } from '../config/brand.config';
+import { COLORS, IMAGES, CONTACT, LOCATION, BRAND } from '../config/brand.config';
 import { useCabin } from '../context/CabinContext';
 import './Dashboard.css';
 
@@ -12,29 +12,33 @@ interface MenuItem {
   subtitle: string;
   icon?: React.ComponentType<{ size: number; color: string }>;
   imageIcon?: string;
-  route: string;
+  route?: string;
+  externalUrl?: string;
   color: string;
 }
 
 const MENU_ITEMS: MenuItem[] = [
-  { id: '1', title: 'Digital Guidebook', subtitle: 'Everything you need to know in one place', icon: Book, route: '/guidebook', color: COLORS.primary },
-  { id: '2', title: 'Weather', subtitle: `5-day forecast for ${LOCATION.cityName}`, icon: CloudSun, route: '/weather', color: COLORS.weatherBlue },
-  { id: '3', title: 'Cabin Mode', subtitle: 'Disconnect from technology and enjoy nature', imageIcon: IMAGES.cabinModeLogo, route: '/cabin-mode', color: COLORS.cabinModeGreen },
-  { id: '4', title: 'Campfire Mode', subtitle: 'Games and stories for the whole family', icon: Flame, route: '/campfire-mode', color: COLORS.campfireOrange },
-  { id: '5', title: 'Come Back & Save', subtitle: "Who doesn't LOVE discounts?", icon: Gift, route: '/come-back', color: COLORS.secondary },
-  { id: '6', title: 'Our Other Properties', subtitle: 'Explore more unique stays', icon: Building2, route: '/other-properties', color: '#6B5B95' },
-  { id: '7', title: `Join ${CONTACT.newsletterName}`, subtitle: 'Our monthly newsletter', icon: Mail, route: '/newsletter', color: '#5B8A72' },
-  { id: '8', title: 'Connect With Us', subtitle: 'Follow us on social media', icon: Share2, route: '/connect', color: '#6B8E7A' },
-  { id: '9', title: 'Need Help', subtitle: "We're here for you", icon: HelpCircle, route: '/help', color: '#7A6B5B' },
+  { id: '1', title: 'Digital Guidebook', subtitle: 'Everything you need to know', icon: Book, route: '/guidebook', color: COLORS.secondary },
+  { id: '2', title: 'Weather', subtitle: `5-day forecast for ${LOCATION.cityName}`, icon: CloudSun, route: '/weather', color: COLORS.secondary },
+  { id: '3', title: 'Cabin Mode', subtitle: 'Disconnect and enjoy nature', imageIcon: IMAGES.cabinModeLogo, route: '/cabin-mode', color: COLORS.secondary },
+  { id: '4', title: 'Campfire Mode', subtitle: 'Games and stories for the family', icon: Flame, route: '/campfire-mode', color: COLORS.secondary },
+  { id: '5', title: 'Come Back & Save', subtitle: "Exclusive returning guest discount", icon: Gift, route: '/come-back', color: COLORS.secondary },
+  { id: '6', title: BRAND.exploreTitle || 'Explore', subtitle: BRAND.exploreSubtitle || 'Things to do nearby', icon: Compass, externalUrl: BRAND.exploreUrl, color: COLORS.secondary },
+  { id: '7', title: `Join ${CONTACT.newsletterName}`, subtitle: 'Get exclusive deals and updates', icon: Mail, route: '/newsletter', color: COLORS.secondary },
+  { id: '8', title: 'Connect With Us', subtitle: 'Follow us on social media', icon: Share2, route: '/connect', color: COLORS.secondary },
+  { id: '9', title: 'Need Help', subtitle: "We're here for you", icon: HelpCircle, route: '/help', color: COLORS.secondary },
 ];
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { selectedCabin, clearCabin } = useCabin();
+  const { selectedCabin } = useCabin();
 
-  const handleChangeCabin = () => {
-    clearCabin();
-    navigate('/');
+  const handleItemClick = (item: MenuItem) => {
+    if (item.externalUrl) {
+      window.open(item.externalUrl, '_blank');
+    } else if (item.route) {
+      navigate(item.route);
+    }
   };
 
   if (!selectedCabin) {
@@ -43,35 +47,31 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="page-container">
+    <div className="page-container dark-theme">
       <div className="dashboard-header">
         <p className="welcome-text">Welcome to</p>
         <h1 className="cabin-name-title">{selectedCabin.name}</h1>
-        <button className="change-btn" onClick={handleChangeCabin}>
-          <RefreshCw size={16} color={COLORS.primary} />
-          <span>Change cabin</span>
-        </button>
       </div>
 
-      <Card className="banner-card">
+      <Card className="banner-card dark-card">
         <img src={selectedCabin.image} alt={selectedCabin.name} className="banner-image" />
       </Card>
 
       <div className="menu-grid">
         {MENU_ITEMS.map((item) => (
-          <Card key={item.id} className="menu-item" onClick={() => navigate(item.route)}>
-            <div className="icon-container" style={{ backgroundColor: item.imageIcon ? 'transparent' : item.color }}>
+          <Card key={item.id} className="menu-item dark-card" onClick={() => handleItemClick(item)}>
+            <div className="icon-container gold-icon" style={{ backgroundColor: item.imageIcon ? 'transparent' : item.color }}>
               {item.imageIcon ? (
                 <img src={item.imageIcon} alt={item.title} className="menu-image-icon" />
               ) : item.icon ? (
-                <item.icon size={28} color="white" />
+                <item.icon size={28} color="#0D0D0D" />
               ) : null}
             </div>
             <div className="menu-text">
               <span className="menu-title">{item.title}</span>
               <span className="menu-subtitle">{item.subtitle}</span>
             </div>
-            <ChevronRight size={20} color={COLORS.lightGray} />
+            <ChevronRight size={20} color={COLORS.secondary} />
           </Card>
         ))}
       </div>

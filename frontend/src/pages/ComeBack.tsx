@@ -2,7 +2,7 @@ import React from 'react';
 import { Heart, Calendar, Check } from 'lucide-react';
 import BackButton from '../components/BackButton';
 import Card from '../components/Card';
-import { COLORS, BRAND, CONTACT } from '../config/brand.config';
+import { COLORS, BRAND } from '../config/brand.config';
 import './ComeBack.css';
 
 export default function ComeBack() {
@@ -11,16 +11,16 @@ export default function ComeBack() {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container dark-theme">
       <BackButton />
 
       <div className="header-center">
         <Heart size={48} color={COLORS.secondary} />
         <h1 className="page-title center">{BRAND.comeBackHeadline}</h1>
-        <p className="subheadline">{BRAND.comeBackSubtext}</p>
+        <p className="header-subtext">{BRAND.comeBackSubtext}</p>
       </div>
 
-      <Card>
+      <Card className="dark-card">
         <p className="description">
           Returning guests receive exclusive discounts when booking direct.
         </p>
@@ -35,21 +35,21 @@ export default function ComeBack() {
 
         <div className="benefits">
           <div className="benefit-item">
-            <Check size={22} color={COLORS.primary} />
+            <Check size={22} color={COLORS.secondary} />
             <span>Best price guarantee</span>
           </div>
           <div className="benefit-item">
-            <Check size={22} color={COLORS.primary} />
+            <Check size={22} color={COLORS.secondary} />
             <span>No booking fees</span>
           </div>
           <div className="benefit-item">
-            <Check size={22} color={COLORS.primary} />
+            <Check size={22} color={COLORS.secondary} />
             <span>Direct host communication</span>
           </div>
         </div>
 
         <button className="primary-btn" onClick={openBooking}>
-          <Calendar size={22} color="white" />
+          <Calendar size={22} color="#0D0D0D" />
           <span>Book Your Next Stay</span>
         </button>
       </Card>

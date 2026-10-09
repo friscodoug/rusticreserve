@@ -12,7 +12,7 @@
 
 .description {
   font-size: 16px;
-  color: #2B2B2B;
+  color: #A0A0A0;
   line-height: 1.5;
   text-align: center;
   margin-bottom: 24px;
@@ -21,7 +21,7 @@
 .inside-text {
   font-size: 16px;
   font-weight: 600;
-  color: #2B2B2B;
+  color: #F5F5F5;
   margin-bottom: 16px;
 }
 
@@ -41,24 +41,5 @@
 
 .list-item span {
   font-size: 16px;
-  color: #2B2B2B;
-}
-
-.primary-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background-color: #2F4F3E;
-  color: white;
-  padding: 14px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: opacity 0.2s;
-}
-
-.primary-btn:hover {
-  opacity: 0.9;
+  color: #F5F5F5;
 }

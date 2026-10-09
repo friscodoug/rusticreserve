@@ -8,11 +8,19 @@
   opacity: 0.7;
 }
 
+.dark-theme .welcome-text {
+  color: #A0A0A0;
+}
+
 .cabin-name-title {
   font-size: 28px;
   font-weight: 700;
   color: #2F4F3E;
   margin-bottom: 4px;
+}
+
+.dark-theme .cabin-name-title {
+  color: #C9A962;
 }
 
 .change-btn {
@@ -24,6 +32,10 @@
   color: #2F4F3E;
 }
 
+.dark-theme .change-btn {
+  color: #C9A962;
+}
+
 .banner-card {
   padding: 0 !important;
   overflow: hidden;
@@ -32,7 +44,7 @@
 
 .banner-image {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -64,6 +76,10 @@
   flex-shrink: 0;
 }
 
+.icon-container.gold-icon {
+  background: linear-gradient(135deg, #C9A962 0%, #B8954F 100%) !important;
+}
+
 .menu-image-icon {
   width: 72px;
   height: 72px;
@@ -82,9 +98,24 @@
   color: #2B2B2B;
 }
 
+.dark-theme .menu-title {
+  color: #F5F5F5;
+}
+
 .menu-subtitle {
   font-size: 14px;
   color: #2B2B2B;
   opacity: 0.6;
   margin-top: 2px;
+}
+
+.dark-theme .menu-subtitle {
+  color: #A0A0A0;
+  opacity: 1;
+}
+
+/* Dark card styling */
+.dark-card {
+  background: #1A1A1A !important;
+  border: 1px solid #333333 !important;
 }

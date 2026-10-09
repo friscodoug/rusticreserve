@@ -1,6 +1,6 @@
 .subheadline {
   font-size: 18px;
-  color: #8B6A4E;
+  color: #C9A962;
   margin-top: 4px;
 }
 
@@ -13,30 +13,28 @@
 
 .code-label {
   font-size: 14px;
-  color: #2B2B2B;
-  opacity: 0.7;
+  color: #A0A0A0;
   margin-bottom: 8px;
 }
 
 .code-box {
-  background: #2F4F3E;
+  background: linear-gradient(135deg, #C9A962 0%, #B8954F 100%);
   padding: 16px 32px;
   border-radius: 12px;
-  border: 2px dashed #8B6A4E;
+  border: 2px dashed #0D0D0D;
 }
 
 .code-text {
   font-size: 28px;
   font-weight: 700;
-  color: white;
+  color: #0D0D0D;
   letter-spacing: 4px;
 }
 
 .code-hint {
   font-size: 14px;
-  color: #2B2B2B;
+  color: #A0A0A0;
   margin-top: 8px;
-  opacity: 0.7;
 }
 
 .benefits {
@@ -54,7 +52,7 @@
 
 .benefit-item span {
   font-size: 16px;
-  color: #2B2B2B;
+  color: #F5F5F5;
 }
 
 /* Other Properties Section */
@@ -65,13 +63,13 @@
 .other-properties-title {
   font-size: 18px;
   font-weight: 600;
-  color: #2F4F3E;
+  color: #C9A962;
   margin-bottom: 4px;
 }
 
 .other-properties-subtitle {
   font-size: 14px;
-  color: #64748b;
+  color: #A0A0A0;
   margin-bottom: 16px;
 }
 
@@ -80,21 +78,21 @@
   align-items: center;
   width: 100%;
   padding: 12px;
-  background: #F5F3EF;
-  border: none;
+  background: #0D0D0D;
+  border: 1px solid #333333;
   border-radius: 12px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .other-properties-btn:hover {
-  background: #E8E6E2;
+  background: #252525;
 }
 
 .property-icon {
   width: 48px;
   height: 48px;
-  background: white;
+  background: #1A1A1A;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -112,12 +110,12 @@
   display: block;
   font-size: 16px;
   font-weight: 600;
-  color: #2B2B2B;
+  color: #F5F5F5;
 }
 
 .property-location {
   display: block;
   font-size: 14px;
-  color: #64748b;
+  color: #A0A0A0;
   margin-top: 2px;
 }

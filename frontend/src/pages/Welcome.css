@@ -6,6 +6,11 @@
   padding: 24px;
 }
 
+/* Dark theme overrides */
+.welcome-container.dark-theme {
+  background: linear-gradient(180deg, #0D0D0D 0%, #1A1A1A 100%);
+}
+
 .welcome-content {
   width: 100%;
   max-width: 400px;
@@ -38,6 +43,10 @@
   margin-bottom: 12px;
 }
 
+.dark-theme .cabin-mode-tagline {
+  color: #A0A0A0;
+}
+
 .logo-container {
   display: flex;
   justify-content: center;
@@ -50,11 +59,22 @@
   object-fit: contain;
 }
 
+.logo.logo-large {
+  width: 280px;
+  height: 280px;
+}
+
 .welcome-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 32px 24px !important;
+}
+
+/* Dark card styles */
+.dark-card {
+  background: #1A1A1A !important;
+  border: 1px solid #333333 !important;
 }
 
 .headline {
@@ -63,6 +83,10 @@
   color: #2F4F3E;
   text-align: center;
   margin-bottom: 8px;
+}
+
+.dark-theme .headline {
+  color: #F5F5F5;
 }
 
 .bear-icon {
@@ -77,12 +101,20 @@
   font-weight: 500;
 }
 
+.dark-theme .subtext {
+  color: #C9A962;
+}
+
 .instruction {
   font-size: 16px;
   color: #2B2B2B;
   text-align: center;
   margin-bottom: 24px;
   line-height: 1.5;
+}
+
+.dark-theme .instruction {
+  color: #A0A0A0;
 }
 
 .continue-btn {
@@ -96,6 +128,12 @@
   font-size: 18px;
   font-weight: 600;
   transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Gold button for dark theme */
+.continue-btn.gold-btn {
+  background: linear-gradient(135deg, #C9A962 0%, #B8954F 100%);
+  color: #0D0D0D;
 }
 
 .continue-btn:hover {
@@ -112,4 +150,8 @@
   font-size: 14px;
   color: #2B2B2B;
   opacity: 0.7;
+}
+
+.dark-theme .footer {
+  color: #A0A0A0;
 }

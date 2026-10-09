@@ -6,8 +6,8 @@
 
 html, body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  background-color: #F5F3EF;
-  color: #2B2B2B;
+  background-color: #0D0D0D;
+  color: #F5F5F5;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,16 +34,96 @@ input, textarea {
   outline: none;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - dark theme */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F5F3EF;
+  background: #1A1A1A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8B6A4E;
+  background: #C9A962;
   border-radius: 3px;
+}
+
+/* Page container base */
+.page-container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(180deg, #0D0D0D 0%, #1A1A1A 100%);
+}
+
+/* Dark theme utility classes */
+.dark-theme {
+  background: linear-gradient(180deg, #0D0D0D 0%, #1A1A1A 100%);
+}
+
+.dark-card {
+  background: #1A1A1A !important;
+  border: 1px solid #333333 !important;
+}
+
+/* Page titles */
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #C9A962;
+  margin-bottom: 8px;
+}
+
+.page-title.center {
+  text-align: center;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: #A0A0A0;
+  margin-bottom: 24px;
+}
+
+/* Header center styling */
+.header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header-subtext {
+  font-size: 14px;
+  color: #A0A0A0;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Primary button */
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #C9A962 0%, #B8954F 100%);
+  color: #0D0D0D;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.primary-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Description text */
+.description {
+  font-size: 16px;
+  color: #A0A0A0;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.5;
 }

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Mail, Leaf, Send } from 'lucide-react';
+import { Mail, Sparkles, Send } from 'lucide-react';
 import BackButton from '../components/BackButton';
 import Card from '../components/Card';
 import { COLORS, CONTACT } from '../config/brand.config';
 import './Newsletter.css';
 
 const BENEFITS = [
-  'Seasonal specials',
-  'Last-minute cabin openings',
-  'Giveaways',
-  'Retreat announcements',
+  'Exclusive discounts',
+  'Last-minute availability alerts',
+  'Special offers & giveaways',
+  'Local event announcements',
 ];
 
 export default function Newsletter() {
@@ -18,28 +18,28 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container dark-theme">
       <BackButton />
 
       <div className="header-center">
-        <Mail size={48} color={COLORS.primary} />
-        <h1 className="page-title center">Unlock Cabin Deals</h1>
+        <Mail size={48} color={COLORS.secondary} />
+        <h1 className="page-title center">Join Our VIP List</h1>
       </div>
 
-      <Card>
-        <p className="description-left">Join our {CONTACT.newsletterName} newsletter for:</p>
+      <Card className="dark-card">
+        <p className="description">Join the {CONTACT.newsletterName} for:</p>
 
         <div className="benefits-list">
           {BENEFITS.map((benefit, index) => (
             <div key={index} className="benefit-row">
-              <Leaf size={18} color={COLORS.primary} />
+              <Sparkles size={18} color={COLORS.secondary} />
               <span>{benefit}</span>
             </div>
           ))}
         </div>
 
         <button className="primary-btn" onClick={handleSubscribe}>
-          <Send size={20} color="white" />
+          <Send size={20} color="#0D0D0D" />
           <span>Join {CONTACT.newsletterName}</span>
         </button>
 

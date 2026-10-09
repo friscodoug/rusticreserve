@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import { COLORS } from '../styles/theme';
+import { COLORS } from '../config/brand.config';
 
 export default function BackButton() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ export default function BackButton() {
         marginBottom: '16px',
       }}
     >
-      <ArrowLeft size={24} color={COLORS.primary} />
+      <ArrowLeft size={24} color={COLORS.secondary} />
     </button>
   );
 }

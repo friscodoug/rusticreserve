@@ -28,15 +28,15 @@ export default function Guidebook() {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container dark-theme">
       <BackButton />
 
       <div className="header-center">
-        <Book size={48} color={COLORS.primary} />
+        <Book size={48} color={COLORS.secondary} />
         <h1 className="page-title center">Your Complete Cabin Guide</h1>
       </div>
 
-      <Card>
+      <Card className="dark-card">
         <p className="description">
           Everything you need for a perfect stay is inside our digital guidebook.
         </p>
@@ -53,7 +53,7 @@ export default function Guidebook() {
         </div>
 
         <button className="primary-btn" onClick={openGuidebook}>
-          <ExternalLink size={22} color="white" />
+          <ExternalLink size={22} color="#0D0D0D" />
           <span>Open the Digital Guidebook</span>
         </button>
       </Card>

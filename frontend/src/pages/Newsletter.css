@@ -1,6 +1,6 @@
 .description-left {
   font-size: 16px;
-  color: #2B2B2B;
+  color: #A0A0A0;
   margin-bottom: 16px;
 }
 
@@ -20,13 +20,12 @@
 
 .benefit-row span {
   font-size: 16px;
-  color: #2B2B2B;
+  color: #F5F5F5;
 }
 
 .privacy-text {
   font-size: 14px;
-  color: #2B2B2B;
-  opacity: 0.6;
+  color: #A0A0A0;
   text-align: center;
   margin-top: 16px;
 }
