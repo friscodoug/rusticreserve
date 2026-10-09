@@ -60,7 +60,7 @@ export default function Dashboard() {
       <div className="menu-grid">
         {MENU_ITEMS.map((item) => (
           <Card key={item.id} className="menu-item dark-card" onClick={() => handleItemClick(item)}>
-            <div className="icon-container gold-icon" style={{ backgroundColor: item.imageIcon ? 'transparent' : item.color }}>
+            <div className={`icon-container ${item.imageIcon ? 'image-icon' : 'gold-icon'}`}>
               {item.imageIcon ? (
                 <img src={item.imageIcon} alt={item.title} className="menu-image-icon" />
               ) : item.icon ? (

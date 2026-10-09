@@ -295,6 +295,18 @@ metadata:
         agent: "testing"
         comment: "✅ THE RUSTIC RESERVE REBRANDING COMPLETE - All features verified with dark luxury theme (black background, gold accents). Welcome page: The Rustic Reserve logo (gold/black luxury design) ✅, Cabin Mode logo at top ✅, headline 'Welcome to The Rustic Reserve' ✅, tagline 'Where Luxury Slows Down.' in gold ✅, location 'Broken Bow, Oklahoma' ✅, gold Continue button ✅. Single Cabin Mode: Clicking Continue goes DIRECTLY to /dashboard (skips cabin selection) ✅. Dashboard: 'Welcome to The Rustic Reserve' ✅, beautiful cabin photo with fire pit at sunset ✅, all 9 tiles with gold icons on dark cards ✅, tiles verified: Digital Guidebook ✅, Weather (5-day forecast for Broken Bow) ✅, Cabin Mode ✅, Campfire Mode ✅, Come Back & Save ✅, Explore (NOT 'Our Other Properties') with subtitle 'Things to do in Broken Bow' ✅, Join VIP Guest List ✅, Connect With Us ✅, Need Help ✅. Come Back & Save: Discount code 'RUSTIC10' in gold box ✅, '10% OFF' ✅, 'Return to The Rustic Reserve' ✅, gold 'Book Your Next Stay' button ✅. Help Page: Hosts 'Steve & Lori' in gold ✅, phone '727-723-4222' ✅, Call and Text buttons working ✅. Connect Page: Facebook button ONLY (NO Instagram) ✅, @RusticReserve handle ✅, hashtags #RusticReserve, #BrokenBowCabins, #OklahomaGetaway ✅. Newsletter: 'Join Our VIP List' heading ✅, 'VIP Guest List' newsletter name ✅, gold 'Join VIP Guest List' button ✅. Guidebook: 'Open the Digital Guidebook' button present (configured to open Google Drive PDF) ✅. Explore tile: Configured with external URL https://therusticreserve.com/explore/ ✅. Mobile viewport (390x844) testing confirmed. All dark luxury theme styling perfect with gold accents throughout."
 
+  - task: "Cabin Mode Logo Overflow Fix"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/Dashboard.tsx, frontend/src/pages/Dashboard.css"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ CABIN MODE LOGO FIX VERIFIED - Bug fix successfully tested on Dashboard. Cabin Mode tile now displays cleanly WITHOUT gold background box ✅. The Cabin Mode logo image is displayed with transparent background ✅, fits properly within allocated space ✅, does NOT overflow or get cut off ✅, looks clean and professional ✅. All other tiles (Digital Guidebook, Weather, Campfire Mode, Come Back & Save) correctly maintain their gold icon backgrounds ✅. Fix implementation: icon-container uses conditional class 'image-icon' for image-based icons (transparent background) vs 'gold-icon' for regular icons (gold gradient background). Mobile viewport (390x844) testing confirmed. Visual comparison screenshots show clear distinction between Cabin Mode (no background) and other tiles (gold backgrounds)."
+
 test_plan:
   current_focus: []
   stuck_tasks: []
@@ -314,3 +326,5 @@ agent_communication:
     message: "✅ TIMBERLINE STAYS REBRANDING VERIFICATION COMPLETE - Tested all 11 pages/sections specified in review request. All branding successfully updated: Logo ✅, Brand name ✅, Tagline ✅, Location ✅, 2 cabins (Rocky Creek, Champagne Bliss) ✅, Discount code TIMBERLINE10 ✅, Host Douglas Rice ✅, Phone 580-257-8371 ✅, Sister property Hibernation Hollow ✅, Newsletter 'The Pine Post' unchanged ✅, Social links ✅, Guidebook links ✅, All features (Cabin Mode, Campfire Mode) working ✅. Mobile viewport (390x844) testing confirmed. App ready for production with new Timberline Stays branding."
   - agent: "testing"
     message: "✅ THE RUSTIC RESERVE REBRANDING TESTING COMPLETE - Comprehensive testing of all 9 requested features completed successfully. Dark luxury theme (black/gold) perfectly implemented throughout. Single cabin mode working correctly (skips cabin selection). All branding elements verified: Logo ✅, Tagline ✅, Location ✅, Discount code RUSTIC10 ✅, Hosts Steve & Lori ✅, Phone 727-723-4222 ✅, Facebook only (no Instagram) ✅, VIP Guest List ✅, Explore tile ✅, Guidebook link ✅. All 9 dashboard tiles present with correct names and gold icons. Mobile-responsive design (390x844) confirmed. App ready for production with The Rustic Reserve branding."
+  - agent: "testing"
+    message: "✅ CABIN MODE LOGO OVERFLOW FIX VERIFIED - Tested the Dashboard bug fix for Cabin Mode logo overflow. Visual testing confirms the fix is working perfectly: Cabin Mode logo displays cleanly WITHOUT gold background box, fits properly within space, does not overflow or get cut off. All other tiles (Digital Guidebook, Weather, Campfire Mode, Come Back & Save) correctly maintain their gold icon backgrounds. The conditional CSS class implementation (image-icon vs gold-icon) is working as intended. Mobile viewport (390x844) testing completed with screenshots."

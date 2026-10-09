@@ -80,9 +80,16 @@
   background: linear-gradient(135deg, #C9A962 0%, #B8954F 100%) !important;
 }
 
+/* No background for image icons like Cabin Mode logo */
+.icon-container.image-icon {
+  background: transparent !important;
+  width: 60px;
+  height: 60px;
+}
+
 .menu-image-icon {
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
