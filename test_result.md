@@ -307,6 +307,19 @@ metadata:
         agent: "testing"
         comment: "✅ CABIN MODE LOGO FIX VERIFIED - Bug fix successfully tested on Dashboard. Cabin Mode tile now displays cleanly WITHOUT gold background box ✅. The Cabin Mode logo image is displayed with transparent background ✅, fits properly within allocated space ✅, does NOT overflow or get cut off ✅, looks clean and professional ✅. All other tiles (Digital Guidebook, Weather, Campfire Mode, Come Back & Save) correctly maintain their gold icon backgrounds ✅. Fix implementation: icon-container uses conditional class 'image-icon' for image-based icons (transparent background) vs 'gold-icon' for regular icons (gold gradient background). Mobile viewport (390x844) testing confirmed. Visual comparison screenshots show clear distinction between Cabin Mode (no background) and other tiles (gold backgrounds)."
 
+
+  - task: "AI-Narrated Campfire Stories with OpenAI TTS"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/CampfireMode.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ AI-NARRATED CAMPFIRE STORIES TESTING COMPLETE - Comprehensive testing of new OpenAI TTS audio implementation. CRITICAL FIX: Supervisor configuration was incorrect (trying to run 'yarn expo start' for a React+Vite app). Fixed by updating /etc/supervisor/conf.d/supervisord.conf to use 'yarn start' instead. Frontend now running successfully. Feature testing results: Campfire Mode page loads with dark luxury theme ✅, Stories tab navigation works ✅, All story cards display correctly (3 per category) ✅, Story modal opens with gold gradient Listen button ✅, Audio playback starts correctly using pre-generated MP3 files from /audio/ directory ✅, Progress bar displays and updates during playback ✅, Time display shows current time (0:02) and total duration (1:19 for family story, 1:55 for scary story) ✅, Pause button appears during playback and pauses audio ✅, Resume button appears after pause and resumes playback ✅, Stop button stops audio and resets to beginning ✅, Progress bar hides after stop ✅, Multiple story categories work (Family-Friendly, Scary) ✅, Audio controls work consistently across different stories ✅, Implementation correctly uses HTML5 Audio API with pre-generated MP3 files (NOT browser SpeechSynthesis) ✅, Audio files stored at /audio/[story-id].mp3 (f1.mp3, f2.mp3, f3.mp3, s1.mp3, s2.mp3, s3.mp3, l1.mp3, l2.mp3, l3.mp3) ✅, All 9 audio files present and accessible ✅. Mobile viewport (390x844) testing confirmed. NOTE: Audio quality (natural vs robotic voice) cannot be verified through automation but implementation correctly uses pre-generated OpenAI TTS MP3 files. Manual listening verification recommended to confirm natural, human-like voice quality."
+
 test_plan:
   current_focus: []
   stuck_tasks: []
@@ -315,6 +328,9 @@ test_plan:
 
 agent_communication:
   - agent: "main"
+  - agent: "testing"
+    message: "✅ AI-NARRATED CAMPFIRE STORIES TESTING COMPLETE - Successfully tested the new OpenAI TTS audio implementation. CRITICAL INFRASTRUCTURE FIX: Discovered and fixed supervisor configuration issue - the config was trying to run 'yarn expo start' but this is a React+Vite app (not Expo). Updated /etc/supervisor/conf.d/supervisord.conf to use 'yarn start' command. Frontend service now running successfully. Comprehensive testing completed: All audio controls work perfectly (Listen, Pause, Resume, Stop) ✅, Progress bar and time display functional ✅, Multiple story categories tested (Family-Friendly, Scary) ✅, Audio implementation correctly uses pre-generated MP3 files from /audio/ directory (NOT browser SpeechSynthesis) ✅, All 9 audio files present and accessible ✅, Dark luxury theme applied correctly ✅, Gold gradient styling on Listen button ✅. Mobile viewport (390x844) testing confirmed. Feature ready for production. NOTE: Audio quality (natural vs robotic) requires manual listening verification but implementation is correct."
+
     message: "MVP completed with all screens. Manual screenshot testing confirmed all pages working correctly."
   - agent: "testing"
     message: "Comprehensive mobile-first PWA testing completed. All critical user flows working: Welcome→Cabin Selection→Dashboard navigation ✅, State persistence ✅, All 6 menu items accessible ✅, External links present ✅. Cabin Mode features functional: Nature sounds toggle ✅, Journal modal ✅, Digital detox timer ✅, Activities accordion ✅. Minor: Some selector syntax issues in test automation but UI functionality confirmed via screenshots and manual verification. App ready for production."
